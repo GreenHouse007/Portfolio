@@ -10,7 +10,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-moss/30 bg-canvas/90 backdrop-blur-sm">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-moss/30 bg-canvas/90 backdrop-blur-sm print:hidden">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2 font-bold text-forest">
@@ -50,6 +50,12 @@ export function Navbar() {
           >
             LinkedIn
           </a>
+          <Link
+            href="/resume"
+            className="rounded-md border border-bear px-3 py-1.5 text-xs font-semibold text-bear transition hover:bg-bear/10"
+          >
+            Resume
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -107,6 +113,9 @@ export function Navbar() {
               >
                 LinkedIn
               </a>
+              <Link href="/resume" onClick={() => setOpen(false)} className="text-forest/70 hover:text-forest">
+                Resume
+              </Link>
             </div>
           </motion.div>
         )}

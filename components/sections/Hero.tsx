@@ -47,6 +47,15 @@ export function Hero() {
               </Link>
             </div>
           </MotionDiv>
+
+          <MotionDiv delay={0.32}>
+            <p className="mt-4 text-sm text-forest/50">
+              or{" "}
+              <Link href="/resume" className="text-bear underline hover:text-crest">
+                view my resume →
+              </Link>
+            </p>
+          </MotionDiv>
         </div>
 
         {/* Bear logo with glow */}
