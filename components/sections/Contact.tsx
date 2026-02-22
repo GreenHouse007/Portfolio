@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { Section } from "@/components/layout/Section";
 
 export function Contact() {
   const [name, setName] = React.useState("");
@@ -35,40 +34,37 @@ export function Contact() {
       setName("");
       setEmail("");
       setMessage("");
-    } catch (err) {
+    } catch {
       setStatus("error");
       setErrorMsg("Network error. Please try again.");
     }
   }
 
   return (
-    <>
-      <Section id="contact" className="py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight">
-            Let’s build something great together
+    <section id="contact" className="bg-forest py-24 text-canvas">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-canvas">
+            Let&apos;s build something together.
           </h2>
-          <p className="mt-4 text-neutral-700">
-            I love turning ideas into working software—clean, accessible, and
-            cloud-ready. Whether you need a polished frontend, a reliable
-            backend, or help shaping an AWS architecture, I bring a builder’s
-            mindset, clear communication, and rapid iteration. If you’re looking
-            for someone who can team up, own outcomes, and ship, I’d love to
-            collaborate.
+          <p className="mt-4 text-canvas/70">
+            I love turning ideas into working software — clean, accessible, and
+            cloud-ready. If you&apos;re looking for someone who can team up, own
+            outcomes, and ship, I&apos;d love to collaborate.
           </p>
         </div>
 
         {/* Form */}
-        <div className="mx-auto mt-10 max-w-xxl">
+        <div className="mx-auto mt-10 max-w-2xl">
           <form
             onSubmit={onSubmit}
-            className="rounded-2xl border bg-white/90 p-6 shadow-sm backdrop-blur"
+            className="rounded-2xl border border-moss/30 bg-canvas p-6 shadow-sm"
           >
             <div className="grid gap-4">
               <div className="text-left">
                 <label
                   htmlFor="name"
-                  className="mb-1 block text-sm font-medium"
+                  className="mb-1 block text-sm font-medium text-forest"
                 >
                   Name
                 </label>
@@ -78,7 +74,7 @@ export function Contact() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-md border px-3 py-2 outline-none ring-0 focus:border-neutral-400"
+                  className="w-full rounded-md border border-moss/50 px-3 py-2 text-forest outline-none ring-0 focus:border-bear focus:ring-1 focus:ring-bear"
                   placeholder="Jane Doe"
                 />
               </div>
@@ -86,7 +82,7 @@ export function Contact() {
               <div className="text-left">
                 <label
                   htmlFor="email"
-                  className="mb-1 block text-sm font-medium"
+                  className="mb-1 block text-sm font-medium text-forest"
                 >
                   Email
                 </label>
@@ -97,7 +93,7 @@ export function Contact() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-md border px-3 py-2 outline-none ring-0 focus:border-neutral-400"
+                  className="w-full rounded-md border border-moss/50 px-3 py-2 text-forest outline-none ring-0 focus:border-bear focus:ring-1 focus:ring-bear"
                   placeholder="you@company.com"
                 />
               </div>
@@ -105,7 +101,7 @@ export function Contact() {
               <div className="text-left">
                 <label
                   htmlFor="message"
-                  className="mb-1 block text-sm font-medium"
+                  className="mb-1 block text-sm font-medium text-forest"
                 >
                   Message
                 </label>
@@ -116,7 +112,7 @@ export function Contact() {
                   rows={8}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full resize-y rounded-md border px-3 py-2 outline-none ring-0 focus:border-neutral-400"
+                  className="w-full resize-y rounded-md border border-moss/50 px-3 py-2 text-forest outline-none ring-0 focus:border-bear focus:ring-1 focus:ring-bear"
                   placeholder="Tell me a bit about your project, goals, and timeline."
                 />
               </div>
@@ -125,19 +121,19 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="mt-2 inline-flex w-1/2 items-center justify-center rounded-md border px-4 py-2 font-medium hover:bg-neutral-100 disabled:cursor-not-allowed"
+                  className="mt-2 inline-flex w-1/2 items-center justify-center rounded-md bg-bear px-4 py-2 font-medium text-canvas transition hover:bg-crest disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === "sending" ? "Sending…" : "Send message"}
                 </button>
               </div>
 
               {status === "ok" && (
-                <p className="text-center text-sm text-emerald-600">
+                <p className="text-center text-sm text-crest">
                   Thanks! Your message has been sent.
                 </p>
               )}
               {status === "error" && (
-                <p className="text-center text-sm text-red-600">
+                <p className="text-center text-sm text-red-400">
                   {errorMsg || "Something went wrong. Please try again."}
                 </p>
               )}
@@ -150,7 +146,6 @@ export function Contact() {
               href="https://www.linkedin.com/in/alexander-green-729b58229"
               label="LinkedIn"
             >
-              {/* LinkedIn */}
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5"
@@ -161,7 +156,6 @@ export function Contact() {
               </svg>
             </Social>
             <Social href="https://github.com/GreenHouse007" label="GitHub">
-              {/* GitHub */}
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5"
@@ -176,7 +170,6 @@ export function Contact() {
               </svg>
             </Social>
             <Social href="https://www.instagram.com/" label="Instagram">
-              {/* Instagram */}
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5"
@@ -186,30 +179,7 @@ export function Contact() {
                 <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM18 5.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
               </svg>
             </Social>
-            <Social href="https://www.facebook.com/" label="Facebook">
-              {/* Facebook */}
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M13 22v-9h3l.5-4H13V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.6 2.1 15.5 2 14.2 2 11.5 2 9.6 3.6 9.6 6.7V9H7v4h2.6v9h3.4z" />
-              </svg>
-            </Social>
-            <Social href="https://www.tiktok.com/" label="TikTok">
-              {/* TikTok */}
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M21 8.5c-2.4 0-4.6-1.3-5.8-3.3V17a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1V9a8.5 8.5 0 0 0-1-.1A7 7 0 1 0 17.6 16V8.6c1.1 1 2.6 1.6 4.1 1.6h.3V8.5H21z" />
-              </svg>
-            </Social>
             <Social href="https://twitter.com/" label="X (Twitter)">
-              {/* X / Twitter */}
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5"
@@ -219,21 +189,10 @@ export function Contact() {
                 <path d="M18.2 2H21l-6.5 7.4L22 22h-6.9l-4.3-5.7L5.8 22H3l7-7.9L2 2h7l3.9 5.2L18.2 2Zm-1.2 18h1.9L9.1 4H7.2l9.8 16Z" />
               </svg>
             </Social>
-            {/* Add YouTube if you want to showcase reels/demos */}
-            <Social href="https://www.youtube.com/" label="YouTube">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .6 5.8 3 3 0 0 0 2.1 2.1C4.4 20.5 12 20.5 12 20.5s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .6-5.8 31 31 0 0 0-.6-5.8zM9.75 8.75l6.5 3.25-6.5 3.25V8.75z" />
-              </svg>
-            </Social>
           </div>
         </div>
-      </Section>
-    </>
+      </div>
+    </section>
   );
 }
 
@@ -252,7 +211,7 @@ function Social({
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-white/70 text-neutral-800 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-canvas/20 bg-canvas/10 text-canvas shadow-sm transition hover:-translate-y-0.5 hover:bg-canvas/20"
       title={label}
     >
       {children}

@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@theme {
+  --color-forest: #0B2E1F;
+  --color-bear: #145C3A;
+  --color-crest: #2E8B57;
+  --color-sage: #DDE7DF;
+  --color-moss: #8DAA95;
+  --color-canvas: #F3F1E7;
+  --color-charcoal: #1A1F1C;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-forest);
+  }
+}
+
 :root {
   scroll-behavior: smooth;
 }

@@ -1,15 +1,18 @@
 export const site = {
-  title: "Alexander Green — Portfolio",
+  name: "Green Bear Labs",
+  title: "Green Bear Labs — Alexander Green",
   description:
-    "Cloud-minded web developer in Utah building reliable, human-centered apps.",
+    "Alexander Green — software developer, worldbuilder, and game designer based in Tooele, Utah. Building at the intersection of technology and creative worlds.",
   baseUrl: "https://example.com",
   ownerName: "Alexander Green",
   github: "https://github.com/GreenHouse007",
   linkedin: "https://www.linkedin.com/in/alexander-green-729b58229",
-  location: "Tooele, Utah, USA",
-  updated: "November 2025",
+  location: "Tooele, Utah",
+  updated: "February 2026",
   nav: [
-    { href: "/#portfolio", label: "Portfolio" },
+    { href: "/#about", label: "About" },
+    { href: "/#hub", label: "Work" },
+    { href: "/#skills", label: "Skills" },
     { href: "/#contact", label: "Contact" },
   ],
 };

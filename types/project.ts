@@ -1,3 +1,13 @@
+export type HubItem = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  external?: boolean;
+  icon: string;
+  accentColor?: string;
+};
+
 export type Project = {
   slug: string;
   title: string;

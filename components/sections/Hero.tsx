@@ -1,50 +1,69 @@
 "use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { MotionDiv } from "@/lib/motion";
-import { site } from "@/config/site";
 
 export function Hero() {
   return (
-    <Section id="hero" className="pt-24">
-      <MotionDiv>
-        <div className="grid items-center gap-8 md:grid-cols-[1.2fr_1fr]">
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-              Cloud-minded web developer building reliable, human-centered apps.
+    <Section id="hero" className="pb-24 pt-32">
+      <div className="grid items-center gap-12 md:grid-cols-[1.2fr_1fr]">
+        {/* Text / CTAs */}
+        <div>
+          <MotionDiv delay={0}>
+            <h1 className="text-5xl font-bold tracking-tight text-forest md:text-6xl">
+              Hi, I&apos;m Alex.
             </h1>
-            <p className="mt-4 max-w-prose text-lg text-neutral-600">
-              I’m {site.ownerName}, focused on AWS and modern web. I connect
-              people, reduce complexity, and ship. I like turning fuzzy ideas
-              into reliable, human-centered apps.
+          </MotionDiv>
+
+          <MotionDiv delay={0.08}>
+            <p className="mt-4 text-2xl font-semibold text-bear">
+              I build software, story worlds, and games — sometimes all at once.
             </p>
-            <div className="mt-6 flex gap-3">
-              <a
-                className="rounded-md border px-4 py-2 hover:bg-neutral-100"
-                href="/contact"
+          </MotionDiv>
+
+          <MotionDiv delay={0.16}>
+            <p className="mt-4 max-w-prose text-lg leading-relaxed text-forest/70">
+              Based in Tooele, Utah. Cloud and web development by trade, creative
+              worldbuilding and game design by passion. Whether it&apos;s a
+              production app or an interactive story — I ship things that work.
+            </p>
+          </MotionDiv>
+
+          <MotionDiv delay={0.24}>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/#hub"
+                className="rounded-md bg-bear px-6 py-3 font-semibold text-canvas transition hover:bg-crest"
               >
-                Let’s work together
-              </a>
-              <a
-                className="rounded-md border px-4 py-2 hover:bg-neutral-100"
-                href={site.github}
+                See My Work
+              </Link>
+              <Link
+                href="/#contact"
+                className="rounded-md border border-bear px-6 py-3 font-semibold text-bear transition hover:bg-bear/10"
               >
-                View my GitHub
-              </a>
+                Get in Touch
+              </Link>
             </div>
-          </div>
-          <div className="justify-self-center">
+          </MotionDiv>
+        </div>
+
+        {/* Bear logo with glow */}
+        <MotionDiv delay={0.12} className="justify-self-center">
+          <div className="relative">
+            <div className="absolute inset-0 -m-8 rounded-full bg-bear/10 blur-3xl" />
             <Image
-              src="/images/headshot.png"
-              alt="Alexander Green"
-              width={360}
-              height={360}
-              className="rounded-xl shadow-md"
+              src="/images/reference/bear_logo.png"
+              alt="Green Bear Labs"
+              width={300}
+              height={300}
+              className="relative drop-shadow-xl"
               priority
             />
           </div>
-        </div>
-      </MotionDiv>
+        </MotionDiv>
+      </div>
     </Section>
   );
 }

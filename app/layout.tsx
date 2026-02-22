@@ -1,10 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { site } from "@/config/site";
-//import { Navbar } from "@/components/layout/Navbar";
-//import { Footer } from "@/components/layout/Footer";
-import { Navbar } from "../components/layout/Navbar";
-import { Footer } from "../components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: site.title,
@@ -24,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-neutral-50 text-neutral-900 antialiased">
+      <body className="bg-canvas text-forest antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

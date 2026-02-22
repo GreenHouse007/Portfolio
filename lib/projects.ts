@@ -18,10 +18,10 @@ const ALL: Project[] = [
     title: "Enfield World Builder",
     tagline: "Living Software Design Document generator",
     tags: ["TypeScript", "React", "Markdown"],
-    cover: "/images/coming-soon.jpg",
+    cover: "/images/worldBuilder.png",
     links: {
       demo: null,
-      code: "https://github.com/GreenHouse007",
+      code: "https://github.com/GreenHouse007/world-builder",
       caseStudy: "/projects/sdd-live-forms",
     },
   },
@@ -74,6 +74,65 @@ const ALL: Project[] = [
     },
   },
 ];
+
+import type { HubItem } from "@/types/project";
+
+const HUB_ITEMS: HubItem[] = [
+  {
+    id: "worlds",
+    title: "Worlds Hub",
+    description: "A central hub for all of Alex's worldbuilding projects and lore archives.",
+    href: "/worlds",
+    icon: "🌍",
+  },
+  {
+    id: "mythica",
+    title: "Mythica",
+    description: "A fantasy creature world — deep lore, ecology, and interactive species catalog.",
+    href: "/mythica",
+    icon: "🐉",
+  },
+  {
+    id: "games",
+    title: "Game Studio",
+    description: "PWA game studio — browser-based games built for desktop and mobile.",
+    href: "/games",
+    icon: "🎮",
+  },
+  {
+    id: "enfield",
+    title: "Enfield Suite",
+    description: "An AI-powered story writing suite — world builders, story forges, and SDD generators.",
+    href: "/enfield",
+    icon: "✍️",
+  },
+  {
+    id: "shadow-realm",
+    title: "Shadow Realm",
+    description: "Choose your own adventure — branching narrative story app built with React and Firebase.",
+    href: "/shadow_realm",
+    icon: "🌑",
+  },
+  {
+    id: "angel-in-progress",
+    title: "Angel In Progress",
+    description: "My wife's creative site — her own corner of the internet.",
+    href: "https://angelinprogress.com",
+    external: true,
+    icon: "💛",
+  },
+  {
+    id: "chow-pow",
+    title: "Chow Pow",
+    description: "A browser-based game — quick, fun, and fully playable on desktop and mobile.",
+    href: "/games",
+    icon: "🍜",
+  },
+];
+
+export function getHubItems(): HubItem[] {
+  return HUB_ITEMS;
+}
 
 export async function getProjects({ limit }: { limit?: number } = {}) {
   return limit ? ALL.slice(0, limit) : ALL;
